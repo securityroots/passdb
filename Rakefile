@@ -17,9 +17,9 @@ Jeweler::Tasks.new do |gem|
   gem.name = "passdb"
   gem.homepage = "http://github.com/etdsoft/passdb"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
-  gem.email = "<etd@nomejortu.com>"
+  gem.summary = %Q{Ruby interface to cirt.net's default password database}
+  gem.description = %Q{Ruby library and command line tool to search and contribute to cirt.net's default password database at http://cirt.net/passwords} 
+  gem.email = "<daniel-at securityroots.com>"
   gem.authors = ["Daniel Martin"]
   # dependencies defined in Gemfile
 end
