@@ -1,6 +1,6 @@
 = passdb
 
-Description goes here.
+This library can be used to search the default password database from cirt.net: http://cirt.net/passwords
 
 == Contributing to passdb
  
@@ -14,6 +14,6 @@ Description goes here.
 
 == Copyright
 
-Copyright (c) 2011 Daniel Martin. See LICENSE.txt for
+Copyright (c) 2011 Security Roots. See LICENSE.txt for
 further details.
 
