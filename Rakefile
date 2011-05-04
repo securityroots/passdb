@@ -15,7 +15,7 @@ require 'jeweler'
 Jeweler::Tasks.new do |gem|
   # gem is a Gem::Specification... see http://docs.rubygems.org/read/chapter/20 for more options
   gem.name = "passdb"
-  gem.homepage = "http://github.com/etdsoft/passdb"
+  gem.homepage = "http://github.com/securityroots/passdb"
   gem.license = "MIT"
   gem.summary = %Q{Ruby interface to cirt.net's default password database}
   gem.description = %Q{Ruby library and command line tool to search and contribute to cirt.net's default password database at http://cirt.net/passwords} 
