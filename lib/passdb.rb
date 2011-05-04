@@ -2,6 +2,7 @@ require 'open-uri'
 require 'nokogiri'
 
 require 'passdb/entry'
+require 'passdb/version'
 
 module Passdb
   URL = 'http://cirt.net/passwords'
