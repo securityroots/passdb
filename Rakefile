@@ -38,12 +38,15 @@ end
 
 task :default => :spec
 
-require 'rake/rdoctask'
-Rake::RDocTask.new do |rdoc|
-  version = File.exist?('VERSION') ? File.read('VERSION') : ""
-
-  rdoc.rdoc_dir = 'rdoc'
-  rdoc.title = "passdb #{version}"
-  rdoc.rdoc_files.include('README*')
-  rdoc.rdoc_files.include('lib/**/*.rb')
+require 'rdoc/task'
+if defined?(RDoc)
+  RDoc::Task.new do |rdoc|
+    rdoc.main     = 'README.md'
+    rdoc.rdoc_dir = 'rdoc'
+    rdoc.title    = "passdb #{Passdb::VERSION::STRING}"
+    rdoc.rdoc_files.include('README.md', 'LICENSE.txt')
+    rdoc.rdoc_files.include('lib/**/*.rb')
+    rdoc.options << '--line-numbers' << '--inline-source'
+  end
 end
+
