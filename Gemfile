@@ -1,6 +1,7 @@
 source "http://rubygems.org"
 
 gem "nokogiri"
+gem "thor"
 
 group :development do
   gem "rspec"
