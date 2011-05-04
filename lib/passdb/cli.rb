@@ -6,6 +6,8 @@ require 'passdb'
 module Passdb
   class CLI < Thor
     include Thor::Actions
+    map "-v" => :version
+
     def initialize(*)
       super
       Thor::Shell::Basic.new
@@ -42,6 +44,11 @@ module Passdb
           puts "    #{name} => #{value}"
         end
       end
+    end
+
+    desc "version", "Show Passdb version"
+    def version
+      say "Passdb #{Passdb::VERSION::STRING}"
     end
   end
 end
