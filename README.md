@@ -44,6 +44,19 @@ or by a free-form criteria
         Notes => Default IP 192.168.1.254
     [...]
 
+You can also use the library inside your tools:
+
+    irb > require 'passdb'
+     => true 
+    irb > Passdb::search(:vendor => 'Zyxel').each do |entry|
+    irb >   puts entry.name
+    irb > end
+    Generic Routers
+    Prestige 652HW-31
+    Prestige
+    Prestige
+
+
 Contributing to passdb
 ----------------------
  
