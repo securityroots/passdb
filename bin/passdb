@@ -7,10 +7,10 @@ require 'passdb/cli'
 
 begin
   Passdb::CLI.start
-rescue Exception => e
-  puts e.message
-  puts e.backtrace.join("\n")
-  exit e.status_code
+#rescue Exception => e
+#  puts e.message
+#  puts e.backtrace.join("\n")
+#  exit e.status_code
 #rescue Interrupt => e
 #  puts "\nQuitting..."
 #  exit 1
