@@ -1,6 +1,8 @@
 require 'thor'
 require 'thor/actions'
 
+require 'passdb'
+
 module Passdb
   class CLI < Thor
     include Thor::Actions
@@ -25,8 +27,12 @@ module Passdb
         puts "You need to specify either --vendor or --criteria"
         exit 1
       end
-
-
+      
+      if opts["vendor"]
+        Passdb.search(:vendor => opts["vendor"])
+      else
+        Passdb.search(:criteria => opts["criteria"])
+      end
     end
   end
 end
