@@ -21,9 +21,24 @@ Gem::Specification.new do |s|
   s.rubygems_version = %q{1.6.1}
   s.summary = %q{Ruby interface to cirt.net's default password database}
 
-  s.executables = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
-  s.files = `git ls-files -- {bin,lib,spec}/*`.split("\n") + extra_rdoc_files
-  s.test_files = `git ls-files -- {spec}/*`.split("\n")
+  # Not sure why this doesn't work
+  # s.executables = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
+  # s.files = `git ls-files -- {bin,lib,spec}/*`.split("\n") + extra_rdoc_files
+  # s.test_files = `git ls-files -- {spec}/*`.split("\n")
+  s.executables = 'passdb'
+  s.files = [ 
+    'bin/passdb',
+    'lib/passdb.rb',
+    'lib/passdb/cli.rb',
+    'lib/passdb/entry.rb',
+    'lib/passdb/version.rb',
+    'spec/passdb_spec.rb',
+    'spec/spec_helper.rb'
+  ] + extra_rdoc_files
+  s.test_files = [
+    'spec/passdb_spec.rb',
+    'spec/spec_helper.rb'
+  ]
 
   if s.respond_to? :specification_version then
     s.specification_version = 3
