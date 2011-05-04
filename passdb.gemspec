@@ -32,6 +32,7 @@ Gem::Specification.new do |s|
     "lib/passdb/cli.rb",
     "lib/passdb/entry.rb",
     "lib/passdb/version.rb",
+    "passdb.gemspec",
     "spec/passdb_spec.rb",
     "spec/spec_helper.rb"
   ]
