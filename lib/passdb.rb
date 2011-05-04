@@ -1,6 +1,8 @@
 require 'open-uri'
 require 'nokogiri'
 
+require 'passdb/entry'
+
 module Passdb
   URL = 'http://cirt.net/passwords'
 
@@ -11,23 +13,30 @@ module Passdb
       raise ArgumentError, "Either :vendor or :criteria are required!"
     end
 
+    results = []
+    entry = nil
     url = "#{URL}?#{type}=#{query}"
     doc = Nokogiri::HTML(open(url))
 
     doc.xpath('/html/body/div/div[2]/div[3]/div/center/table/tr').each do |tr|
-      tr.children.each do |td|
-        next if (td.children.first.name == 'center') # Google Ad
-        if (td.children.first.name == 'a')
-          puts td.xpath('h3/b').first.content
-        else
-          if (td.children.first.name == 'b')
-            print "#{td.children.first.content}:"
-          else
-            puts td.content.chomp
-          end
+      next if tr.search('script').any?
+
+      if tr.search('td').size == 1
+        if entry
+          results << entry
         end
-        puts
+        entry = Entry.new
+        entry.name = tr.search('td').search('i').text
+      else
+        name, value = tr.search('td')
+        entry.attributes[ name.search('b').text ] = value.text 
       end
     end
+
+    if entry
+      results << entry
+    end
+
+    return results
   end
 end
