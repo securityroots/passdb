@@ -1,5 +1,5 @@
 # -*- encoding: utf-8 -*-
-require File.expand_path('../lib/thor/version', __FILE__)
+require File.expand_path('../lib/passdb/version', __FILE__)
 
 extra_rdoc_files = ['LICENSE.txt', 'README.md', 'Rakefile']
 
